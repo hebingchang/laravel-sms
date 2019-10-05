@@ -630,6 +630,7 @@ class SmsManager
                 $tplData[$key] = call_user_func_array($value, [$code, $minutes, $this->input(), $type]);
             }
         }
+        $tplData['code'] = $code;
 
         return array_filter($tplData, function ($value) {
             return $value !== null;
